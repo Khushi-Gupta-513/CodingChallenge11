@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Management</title>
+    <title>Order Management</title> 
 </head>
 <body>
     <h2>Place Your Order</h2>
     
+    <!-- Dropdown menu for selecting a product between A, B, & C -->
     <label for="product-selector">Select a Product:</label>
     <select id="product-selector">
         <option value="10">Product A - $10</option>
@@ -15,15 +16,22 @@
         <option value="20">Product C - $20</option>
     </select>
     
+    <!-- Input field for entering quantity of the product you have selected -->
     <label for="quantity">Quantity:</label>
     <input type="number" id="quantity" value="1" min="1">
     
+    <!-- Display for total price which changes automatically when the quantity and product type is changed -->
     <p>Total Price: $<span id="total-price">10.00</span></p>
     
+    <!-- Button to place the order -->
     <button id="place-order">Place Order</button>
     
+    <!-- Paragraph to display order summary and all the details regarding the order -->
     <p id="order-summary"></p>
     
-    <script src="main.js"></script> <!-- Link to the JavaScript file -->
+    <!-- Link to the JavaScript file for functionality and ensuring the code works -->
+    <script src="main.js"></script>
+    
 </body>
 </html>
+
