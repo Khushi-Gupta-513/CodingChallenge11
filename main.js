@@ -25,3 +25,19 @@ productSelector.addEventListener('change', updateTotalPrice);
 
 // Add event listener for quantity input to dynamically update total price when the quantity changes
 quantityInput.addEventListener('input', updateTotalPrice);
+
+// Handle order submission
+placeOrderButton.addEventListener('click', function() {
+    const selectedProduct = productSelector.options[productSelector.selectedIndex].text; // Get selected product's name
+    const quantity = parseInt(quantityInput.value); // Get the quantity input by the user
+    const totalPrice = totalPriceElement.textContent; // Get the current total price displayed
+
+    // Ensure quantity is a valid number (greater than 0)
+    if (isNaN(quantity) || quantity < 1) {
+        alert("Please enter a valid quantity greater than 0."); // Alert user if quantity is invalid
+        return; // Stop function execution if invalid
+    }
+    
+    // Display the order summary
+    orderSummary.textContent = `You ordered ${quantity} of ${selectedProduct}. Total price: $${totalPrice}`;
+});
